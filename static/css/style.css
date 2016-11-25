@@ -1,0 +1,12 @@
+/* YOUR CUSTOM STYLES */
+/*img{max-height: 200px;}*/
+#title{
+	color: #ffe200;
+}
+#side{
+	color: #ffe200; font-size: 20px;margin-top: 10px
+}
+#label{color:#C00;}
+#hover{
+	text-decoration: none;
+}

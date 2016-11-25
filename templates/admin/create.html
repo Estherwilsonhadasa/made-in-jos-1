@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+{% block admin %}
+		<span><i class="fa fa-cog" id="side" style=""></i></span>
+{% endblock %}
+{% block start %}
+	<form method="POST"> {% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" value="ok"></input>
+	</form>
+	
+{% endblock %}
+</body>
+</html>

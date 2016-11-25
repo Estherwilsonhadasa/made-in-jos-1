@@ -1,0 +1,450 @@
+{% extends 'base.html' %}
+   {% block title %}{% endblock %}
+    {% block header %}
+<nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+       <a class="navbar-brand" href="/madeinjos/">Made In JOS</a>
+          
+        </div>
+        
+        <ul class="nav navbar-nav navbar-right">
+        {% block admin %}
+          <button class="fa-user btn btn-danger" data-toggle="modal" data-target="#modal-register" >
+              sign-up
+
+          </button>
+
+         <button class="fa-login btn btn-danger" data-toggle="modal" data-target="#modal-login">
+    Login
+</button>
+                                
+<!-- Modal Login Form-->
+<div class="modal fade modal-ext" id="modal-register" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+           
+            <!--Header-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h3><i class="fa fa-user"></i> Login</h3>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                <div class="md-form">
+                  
+                    <form method="POST">{% csrf_token %}
+                       {{ form }}
+                       
+                    <input type="submit" value="login" class="btn btn-danger"></input>
+                    </form>
+
+                </div> 
+                </div>
+
+                <!-- <div class="md-form">
+                
+                    <i class="fa fa-lock prefix"></i>
+                    <input type="password" id="form3" class="form-control">
+                    <label for="form3">Your password</label>
+                </form>
+                </div>
+                <div class="text-xs-center">
+                    <button class="btn btn-danger btn-xs">Login</button>
+                </div> -->
+              
+            <!-- </div> -->
+             <!--Footer-->
+            <div class="modal-footer">
+                <div class="options">
+                    <!-- <p>Not a member? <a href="#">Sign Up</a></p> -->
+                    <p>Forgot <a href="#">Password?</a></p>
+                </div>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+        </ul>
+
+        {% endblock %}
+      </div>
+</nav>
+{% endblock %}
+ {% block start %}
+
+<!-- <div class="col-md-12">
+    <div class="md-form col-md-offset-10">
+    <form action="" method="GET">
+        <label>Search</label>
+    
+        <input type="text"  class="form-control">
+
+    </div> -->
+
+<!-- <div class="jumbotron"> -->
+<!-- </div> -->
+<div class="col-md-12">
+    <div class="col-md-10">
+        <div class="row">
+        <center><h3><b>HOT DEALS</b></h3></center>
+        <!--Carousel Wrapper-->
+        <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+            <!--Controls-->
+            <div class="controls-top">
+            <center>
+                <a class="btn-floating btn-large" href="#multi-item-example" data-slide="prev"><i class="fa fa-chevron-left" style="font-size: 50px; width: 50px"></i></a>
+                <a class="btn-floating btn-small" href="#multi-item-example" data-slide="next"><i class="fa fa-chevron-right" style="font-size: 50px; "></i></a></center>
+            </div>
+            <!--/.Controls-->
+
+            <!--Indicators-->
+            <!-- <ol class="carousel-indicators">
+                <li data-target="#multi-item-example" data-slide-to="0" class="active"></li>
+                <li data-target="#multi-item-example" data-slide-to="1"></li>
+                
+            </ol> -->
+            <!--/.Indicators-->
+
+            <!--Slides-->
+            <div class="carousel-inner" role="listbox" style="margin-top: 50px">
+
+                <!--First slide-->
+                <div class="carousel-item active" >
+
+                    <div class="col-md-4"  >
+                        <!--Card-->
+                        <div class="card product-card">
+
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight">
+                                <img src="images/LALA-IKAI.jpg" class="img-fluid" alt="">
+                                
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Discount label-->
+                            <span class="label" style="background-color: #F6F62D">-20%</span>
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <a style="text-decoration: none;"><h4 class="card-title">Product name</h4></a>
+                            </div>
+
+                            <!--Call to action-->
+                            <div class="cta">
+                                <p>$500 </p>
+
+                                <button class="btn btn-danger">Buy now</button>
+                                <button class="btn btn-default" data-toggle="modal" data-target="#quick-look-ex">Quick look</button>
+                            </div>
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                    <div class="col-md-4 hidden-sm-down">
+                        <!--Card-->
+                        <div class="card product-card">
+
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight">
+                                <img src="images/Converse-All-Star.jpg" class="img-fluid" alt="">
+                                
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Discount label-->
+                            <span class="label" style="background-color: #F6F62D">-20%</span>
+
+                            <!--Rating-->
+                            
+                            <div class="action-buttons">
+                                
+                                <!-- <a class="btn-floating" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="fa fa-heart"></i></a> -->
+                            </div>
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <a style="text-decoration: none;"><h4 class="card-title">Product name</h4></a>
+                            </div>
+
+                            <!--Call to action-->
+                            <div class="cta">
+                                <p>$500 <!-- <span>$700</span> --></p>
+
+                                <button class="btn btn-danger">Buy now</button>
+                                <button class="btn btn-default" data-toggle="modal" data-target="#quick-look-ex">Quick look</button>
+                            </div>
+
+                            
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                    <div class="col-md-4 hidden-sm-down">
+                        <!--Card-->
+                        <div class="card product-card">
+
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight">
+                                <img src="images/laptop-bag.jpg" width="250" height="100" class="img-fluid" alt="">
+                                
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Discount label-->
+                            <span class="label" style="background-color: #F6F62D">-20%</span>
+                            
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <a style="text-decoration: none;"><h4 class="card-title">Product name</h4></a>
+                            </div>
+
+                            <!--Call to action-->
+                            <div class="cta">
+                                <p>$500</p>
+
+                                <button class="btn btn-danger">Buy now</button>
+                                <button class="btn btn-default" data-toggle="modal" data-target="#quick-look-ex">Quick look</button>
+                            </div>
+
+                            
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                </div>
+                <!--/.First slide-->
+
+                <!--Second slide-->
+                <div class="carousel-item">
+
+                    <div class="col-md-4">
+                        <!--Card-->
+                        <div class="card product-card">
+
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight">
+                                <img src="images/M41438.jpg" class="img-fluid" alt="">
+                                <a>
+                                    <div class="mask"> </div>
+                                </a>
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Discount label-->
+                            <span class="label">-20%</span>
+
+
+                            <!--Buttons-->
+                            <!-- <div class="action-buttons">
+                                <a class="btn-floating" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="fa fa-heart"></i></a>
+                            </div> -->
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <a><h4 class="card-title">Product name</h4></a>
+                            </div>
+
+                            <!--Call to action-->
+                            <div class="cta">
+                                <p>$500</p>
+
+                                <button class="btn btn-danger">Buy now</button>
+                                <button class="btn btn-default" data-toggle="modal" data-target="#quick-look-ex">Quick look</button>
+                            </div>
+
+                            <!--Card reveal-->
+                            <div class="card-reveal">
+                                <div class="content text-xs-center">
+
+                                    
+
+                                </div>
+                            </div>
+                            <!--/.Card reveal-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                    <div class="col-md-4 hidden-sm-down">
+                        <!--Card-->
+                        <div class="card product-card">
+
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight">
+                                <img src="images/index.jpeg" class="img-fluid" alt="">
+                                
+                                <a>
+                                    <div class="mask"> </div>
+                                </a>
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Discount label-->
+                            <span class="label">-20%</span>
+
+                            <!--Rating-->
+                            <!--  -->
+
+                            <!--Buttons-->
+                            <!-- <div class="action-buttons">
+                                <a class="btn-floating" data-toggle="tooltip" data-placement="bottom" title="Add to wishlist"><i class="fa fa-heart"></i></a>
+                            </div> -->
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <a><h4 class="card-title">Product name</h4></a>
+                            </div>
+
+                            <!--Call to action-->
+                            <div class="cta">
+                                <p>$500 </p>
+
+                                <button class="btn btn-danger">Buy now</button>
+                                <button class="btn btn-default" data-toggle="modal" data-target="#quick-look-ex">Quick look</button>
+                            </div>
+
+                            <!--Card reveal-->
+                            <div class="card-reveal">
+                                <div class="content text-xs-center">
+
+                                    
+                                    
+                                </div>
+                            </div>
+                            <!--/.Card reveal-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                    <div class="col-md-4 hidden-sm-down">
+                        <!--Card-->
+                        <div class="card product-card">
+
+                            <!--Card image-->
+                            <div class="view overlay hm-white-slight">
+                                <img src="images/Puma Suede.jpg" class="img-fluid" alt="">
+                                <a>
+                                    <div class="mask"> </div>
+                                </a>
+                            </div>
+                            <!--/.Card image-->
+
+                            <!--Discount label-->
+                            <span class="label">-20%</span>
+
+                            <!--Rating-->
+                           
+
+                            <!--Buttons-->
+                            
+
+                            <!--Card content-->
+                            <div class="card-block">
+                                <!--Title-->
+                                <a><h4 class="card-title">Product name</h4></a>
+                            </div>
+
+                            <!--Call to action-->
+                            <div class="cta">
+                                <p>$500 </p>
+
+                                <button class="btn btn-danger">Buy now</button>
+                                <button class="btn btn-default" data-toggle="modal" data-target="#quick-look-ex">Quick look</button>
+                            </div>
+
+                            <!--Card reveal-->
+                            <div class="card-reveal">
+                                <div class="content text-xs-center">
+
+                                    <!-- <h4 class="card-title">Social shares <i class="fa fa-close"></i></h4> -->
+                                    <!-- <hr> -->
+
+                                    <!--Social Icons-->
+                                    
+
+                                </div>
+                            </div>
+                            <!--/.Card reveal-->
+
+                        </div>
+                        <!--/.Card-->
+                    </div>
+
+                </div>
+                <!--/.Second slide-->
+
+                
+
+            </div>
+            <!--/.Slides-->
+
+        </div>
+        <!--/.Carousel Wrapper-->
+        <div class="container-fluid">
+           <center> <h3><b style="color: red">CATEGORIES</b></h3></center>
+        </div>
+        <div class="col-md-12">
+
+                <div class="col-md-4" >
+
+            <!--Collection card-->
+            <div class="card collection-card" >
+                <!--Card image-->
+                <div class="view  hm-zoom">
+                    
+                    <img src="{{ all.photo.url }}" class="img-fluid" alt="" style="height: 200px; width: 200px">
+                    <div class="stripe light">
+                        <!-- {% for all in querysetlist %} -->
+
+                        <a href="/madeinjos/product/{{.id}}/">
+                        <!-- {% endfor %} -->
+
+                        
+                            <h3 id="title">{{ all.title }} <i class="fa fa-chevron-right"></i></h3>
+                        </a>
+                    </div>
+                </div>
+                <!--/.Card image-->
+            </div>
+            
+            <!--/.Collection card-->
+
+        </div>
+
+        </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="row">
+            <div class="jumbotron"> ADS</div>
+        </div>
+    </div>
+
+</div>
+
+    <!-- / project ends here-->
+    {% endblock %}
+    
+
+
+
+</body>
+
+</html>
